@@ -15,6 +15,7 @@ url = "https://github.com/PhotKosee"
 [social.params]
 icon = "brand-github"
 
+[[social]]
 identifier = "linkedin"
 name = "LinkedIn"
 url = "linkedin.com/in/phot-kosee"
