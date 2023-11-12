@@ -21,4 +21,4 @@ name = "LinkedIn"
 url = "linkedin.com/in/phot-kosee"
 
 [social.params]
-icon = "img/brand-linkedin.svg"
+icon = "user"
