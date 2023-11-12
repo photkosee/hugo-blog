@@ -1,6 +1,6 @@
 ---
-title: Example Category
-description: A description of this category
+title: Computer Networking
+description: Easy-to-understand content about computer networking
 image:
 
 # Badge style
