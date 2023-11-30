@@ -16,6 +16,14 @@ url = "https://github.com/PhotKosee"
 icon = "brand-github"
 
 [[social]]
+identifier = "linkedin"
+name = "LinkedIn"
+url = "https://www.linkedin.com/in/phot-koseekrainiramon-70a313274/"
+
+[social.params]
+icon = "brand-linkedin"
+
+[[social]]
 identifier = "portfolio website"
 name = "Portfolio Website"
 url = "https://photkosee.github.io/next-portfolio/"
