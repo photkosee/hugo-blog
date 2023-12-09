@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog | Phot</title><link>http://photkosee.github.io/hugo-blog/</link><description>Recent content on Blog | Phot</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 09 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://photkosee.github.io/hugo-blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Is React Beautiful DnD an S tier library?</title><link>http://photkosee.github.io/hugo-blog/p/dnd/</link><pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate><guid>http://photkosee.github.io/hugo-blog/p/dnd/</guid><description>&lt;img src="http://photkosee.github.io/hugo-blog/p/dnd/cover.png" alt="Featured image of post Is React Beautiful DnD an S tier library?" />&lt;p>Embarking on the endeavor to craft my own rendition of the &lt;a class="link" href="https://github.com/photkosee/react-pymetrics-towers" target="_blank" rel="noopener"
+>Primetrics Towers Game&lt;/a>, I aspired to elevate the user experience through the integration of a drag-and-drop feature. In the course of my exploration, I came across React Beautiful DnD, recognizing its potential to streamline the implementation process. As expected, it seamlessly delivered an effortlessly smooth dragging experience with minimal coding efforts—merely necessitating the specification of a &lt;code>DragDropContext&lt;/code> for the desired area and a &lt;code>Droppable&lt;/code> for the intended drop zone.&lt;/p>
+&lt;p>In my initial design, I effectively regulated the number of items within a &lt;code>Droppable&lt;/code> object by incorporating a conditional check within the &lt;code>isDropDisabled&lt;/code> property, as demonstrated in the following TypeScript code snippet:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="k">const&lt;/span> &lt;span class="n">isDroppable&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">towerIndex&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">number&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">blockIndex&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">number&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">towers&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">towerIndex&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">blocks&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">length&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">blockIndex&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>Initial design:
+&lt;img src="http://photkosee.github.io/hugo-blog/hugo-blog/p/dnd/1.jpg"
+width="2224"
+height="1368"
+srcset="http://photkosee.github.io/hugo-blog/hugo-blog/p/dnd/1_hu1f29a938ac051ffea54456ebe011c165_127869_480x0_resize_q75_box.jpg 480w, http://photkosee.github.io/hugo-blog/hugo-blog/p/dnd/1_hu1f29a938ac051ffea54456ebe011c165_127869_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Initial design"
+class="gallery-image"
+data-flex-grow="162"
+data-flex-basis="390px"
+>&lt;/p>
+&lt;/blockquote>
+&lt;p>Nevertheless, a challenge presented itself when the &lt;code>Draggable&lt;/code> items within the &lt;code>Droppable&lt;/code> area exhibited an animated movement to accommodate incoming items. This behavior, inherent in the library as a fundamental feature, did not align with my vision of a stationary tower. Despite my efforts, customizing this aspect proved impractical due to its integral role in providing a &amp;ldquo;beautiful and natural movement of items.&amp;rdquo;&lt;/p>
+&lt;blockquote>
+&lt;p>Natural movement:
+&lt;img src="http://photkosee.github.io/hugo-blog/hugo-blog/p/dnd/2.jpg"
+width="2224"
+height="1365"
+srcset="http://photkosee.github.io/hugo-blog/hugo-blog/p/dnd/2_hu1f29a938ac051ffea54456ebe011c165_105329_480x0_resize_q75_box.jpg 480w, http://photkosee.github.io/hugo-blog/hugo-blog/p/dnd/2_hu1f29a938ac051ffea54456ebe011c165_105329_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Natural movement"
+class="gallery-image"
+data-flex-grow="162"
+data-flex-basis="391px"
+>&lt;/p>
+&lt;/blockquote>
+&lt;p>Considering alternative libraries, I explored React DnD and, upon witnessing the &lt;a class="link" href="https://react-dnd.github.io/react-dnd/docs/tutorial" target="_blank" rel="noopener"
+>chess board demo&lt;/a>, discerned that my preferred approach involved adhering to React Beautiful DnD. I chose to refine my strategy by dividing the &lt;code>Droppable&lt;/code> area and restricting the number of &lt;code>Draggable&lt;/code> items within each zone to one.&lt;/p>
+&lt;blockquote>
+&lt;p>Final design:
+&lt;img src="http://photkosee.github.io/hugo-blog/hugo-blog/p/dnd/3.jpg"
+width="2224"
+height="1365"
+srcset="http://photkosee.github.io/hugo-blog/hugo-blog/p/dnd/3_hu1f29a938ac051ffea54456ebe011c165_127981_480x0_resize_q75_box.jpg 480w, http://photkosee.github.io/hugo-blog/hugo-blog/p/dnd/3_hu1f29a938ac051ffea54456ebe011c165_127981_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+alt="Final design"
+class="gallery-image"
+data-flex-grow="162"
+data-flex-basis="391px"
+>&lt;/p>
+&lt;/blockquote>
+&lt;p>In conclusion, it became evident that React Beautiful DnD excels in delivering a captivating and natural item movement, making it an invaluable tool for those seeking to implement a Trello-like board with standard drag-and-drop functionality. While the library may have limitations in terms of precise customization, my journey experimenting with a new library was both educational and enjoyable. I invite you to explore and experience my game, &lt;a class="link" href="https://github.com/photkosee/react-pymetrics-towers" target="_blank" rel="noopener"
+>Primetrics Towers Game&lt;/a>.&lt;/p></description></item><item><title>BCI in the video game industry</title><link>http://photkosee.github.io/hugo-blog/p/bci-thesis/</link><pubDate>Sun, 12 Nov 2023 00:00:00 +0000</pubDate><guid>http://photkosee.github.io/hugo-blog/p/bci-thesis/</guid><description>&lt;img src="http://photkosee.github.io/hugo-blog/p/bci-thesis/cover.jpg" alt="Featured image of post BCI in the video game industry" />&lt;p>Today, I participated in a thesis from one of my seniors. He is developing a Mario-like game to research user experience using a brain-computer interface to control your character’s actions instead of a keyboard.&lt;/p>
+&lt;blockquote>
+&lt;p>What is a brain-computer interface (BCI)? The technology allows people to control devices or communicate directly with a computer using their brain signals. The basic idea is to interpret brain signals and translate them into commands that a computer or device can understand.&lt;/p>
+&lt;/blockquote>
+&lt;p>This is my first time using a BCI device. It is fascinating how we can play a game with just our thoughts. However, it wasn’t easy when I first tried to exercise my brain on a simple action, such as lifting a box.&lt;/p>
+&lt;p>In terms of user experience, this is an incredible feature, but I find it challenging to get familiar with the device. It is uncomfortable when you cannot control the actions with your brain compared to doing them easily using a keyboard. On the other hand, since this is my first time and I only had a few minutes to get used to the device, I do not doubt that controlling the actions with your brain is way more satisfying once you can fully control it.&lt;/p>
+&lt;p>In addition, this is an excellent technology to help those who cannot or are struggling to use a keyboard or a controller to play a game. Allow them to play a game using their brains’ activities even though this version of the device used in the thesis does not support people wearing glasses like me. I hope the more recent version of the device will be able to solve this problem.&lt;/p>
+&lt;p>It has not been many decades since this idea was introduced. I think this technology has way more room to grow and improve. In the video game industry, the device must be more user-friendly, making it easier to control with users’ brains. However, the device used in this thesis is not the latest version. &lt;a class="link" href="https://emotiv.gitbook.io/insight-2-user-manual/introduction/introduction-to-insight-2" target="_blank" rel="noopener"
+>Check out the manual of the device here&lt;/a>.&lt;/p></description></item><item><title>Archives</title><link>http://photkosee.github.io/hugo-blog/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>http://photkosee.github.io/hugo-blog/archives/</guid><description/></item><item><title>Search</title><link>http://photkosee.github.io/hugo-blog/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://photkosee.github.io/hugo-blog/search/</guid><description/></item></channel></rss>
